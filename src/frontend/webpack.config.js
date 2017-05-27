@@ -9,9 +9,6 @@ module.exports = {
       loader: 'babel-loader'
     }]
   },
-  resolve: {
-    extensions: ['.js', '.jsx']
-  },
   output: {
     path: __dirname + 'src/frontend/dist',
     publicPath: '/',

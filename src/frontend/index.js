@@ -1,11 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-class App extends React.Component{
+import Budget from './components/containers/main'
+
+console.log(Budget)
+
+
+class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1>hello world</h1>
+
+				<MuiThemeProvider>
+			    	<Budget />
+			 	</MuiThemeProvider>
+				
 			</div>
 		)
 	}
