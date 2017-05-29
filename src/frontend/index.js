@@ -1,20 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
-import Budget from './components/containers/main'
+injectTapEventPlugin();
 
-console.log(Budget)
+import './css/index.css';
 
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+
+import Main from './main.js'
+import todoApp from './reducers/reducers'
+
+let store = createStore(todoApp)
 
 class App extends React.Component {
 	render() {
 		return (
 			<div>
 
-				<MuiThemeProvider>
-			    	<Budget />
-			 	</MuiThemeProvider>
+			 <Provider store = {store}>
+			      <Main />
+			 </Provider>,
 				
 			</div>
 		)
